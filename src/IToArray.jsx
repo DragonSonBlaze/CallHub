@@ -1,7 +1,7 @@
 import react from "react";
 import Input from "./Input";
 import Table from "./table";
-import './App.css';
+import './App.scss';
 
 // is the number is 10 digits long, we are gold but in case of remove the first 2 digits
 
@@ -50,7 +50,7 @@ if(consecutiveNo>=10){
       arr.push(u); 
     }
 // need a way to handle the spaces
-return <Table users={arr} />
+return <Table users={arr} x={props.x}/>
 
     
 }

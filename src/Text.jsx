@@ -1,6 +1,6 @@
 import react from "react";
-import './App.css';
-import './index.css'
+import './App.scss';
+import './index.scss'
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import ThreeDRotation from '@mui/icons-material/ThreeDRotation';
 function Text(){

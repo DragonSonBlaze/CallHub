@@ -1,10 +1,7 @@
-  import './App.css';
+import './App.scss';
 import Input from "./Input"
 import Text from "./Text"
-
-
 function App() {
- 
   return (
     <body >
     <div  > 

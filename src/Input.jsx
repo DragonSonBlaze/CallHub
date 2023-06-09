@@ -1,21 +1,21 @@
 import react,{useState} from "react";
 import IToArray from "./IToArray";
-import './App.css';
+import './App.scss';
 
 // this will be the first component the users interacts with!
 // this will send string to the IToArray component
 
 function Input(){
-
-     const[data,setData]=useState('');
+  const[x,changeVariable]=useState(0);
+  const[data,setData]=useState('');
     const [dat,setInputText]=useState('');
     const handleChange = (e) => {
         setInputText(e.target.value);
       };
-    const timepass =(e) => {setData(dat); e.preventDefault()}
+    const timepass =(e) => {setData(dat); e.preventDefault();changeVariable(1)}
     return (
        <div >
-      <form  background-color="yellow"onSubmit={timepass}>
+      <form  onSubmit={timepass}>
         <input
           id="first_name"
           name="first_name"
@@ -26,7 +26,7 @@ function Input(){
         />
         <button class="form-submit-button" type="submit">Submit data</button>
       </form>
-      <IToArray st={data} />
+      <IToArray st={data} x={x}/>
     </div>
     )
    
