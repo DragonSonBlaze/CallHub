@@ -50,7 +50,7 @@ if(consecutiveNo>=10){
       arr.push(u); 
     }
 // need a way to handle the spaces
-return <Table users={arr} x={props.x}/>
+return (arr.length===0) ?<div></div>: <Table users={arr} x={props.x}/>
 
     
 }
