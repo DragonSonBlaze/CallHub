@@ -6,16 +6,23 @@ import './App.scss';
 // this will send string to the IToArray component
 
 function Input(){
-  const[x,changeVariable]=useState(0);
-  const[data,setData]=useState('');
+    const[data,setData]=useState('');
     const [dat,setInputText]=useState('');
     const handleChange = (e) => {
         setInputText(e.target.value);
       };
-    const timepass =(e) => {setData(dat); e.preventDefault();changeVariable(1)}
+    let g=[];
+    const timepass =() => {
+        g=data;
+       g+=dat;
+       g+=" ";
+       setInputText('');
+      setData(g);
+      // e.preventDefault();
+       }
     return (
        <div >
-      <form  onSubmit={timepass}>
+      <form  >
         <input
           id="first_name"
           name="first_name"
@@ -24,10 +31,12 @@ function Input(){
           value={dat}
           placeholder="Enter the data here"
         />
-        <button class="form-submit-button" type="submit">Submit data</button>
+        <button onClick={timepass} class="form-submit-button" type="button">Submit data</button>
       </form>
-      <IToArray st={data} x={x}/>
-    </div>
+      <p></p>
+      <p></p>
+      <IToArray st={data} />
+          </div>
     )
    
 }

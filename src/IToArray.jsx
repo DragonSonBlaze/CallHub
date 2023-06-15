@@ -7,6 +7,7 @@ import './App.scss';
 
 function IToArray(props){
     // this is the input
+    console.log(props.st)
 let s=props.st 
 let arr=[] //this will be the output array
 let id=1// this will keep track of the id or the number of receivers
