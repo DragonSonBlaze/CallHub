@@ -1,4 +1,4 @@
-import react,{useState} from 'react';
+import react,{useState,useEffect} from 'react';
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -10,16 +10,12 @@ import Paper from "@material-ui/core/Paper";
 
 
 function Table1(props){
-    const users=props.users
+    let users=props.users
+    console.log("what is the users when received ",users)
     let arr=[];
     for(let i=0;i<users.length;++i) arr[i]="beforeClick";
-
     const [colorarr, setIsActiveIndex] = useState(arr); 
-    
-      const [NewUser,ChangeUser]=useState(users);
-      console.log(NewUser);
-    
-    
+    const [NewUser,ChangeUser]=useState(users);    
     const handleColorChange = (i) => {
         if(colorarr.length===0){
           arr[i]="afterClick";
@@ -29,15 +25,35 @@ function Table1(props){
           newArr[i]="afterClick";
           setIsActiveIndex(newArr);
         }
-        
     };
+    // the main problem is no for loops are alowed in the toDelete function, also another issue is it does not go line by line as this is a compliler language sort of so the array is called then and there 
+    //
     const ToDelete=(i)=>{
-      ChangeUser((current) =>
-      current.filter((fruit) => fruit.id !== i),
-    );
-      for(let i=0;i<NewUser.length;++i) NewUser[i].id=i;
-      for(let j=i;j<colorarr.length-1;++j ) colorarr[j]=colorarr[j+1];
-    };
+      
+    let arr=[...NewUser];
+    let arr1=[...colorarr];
+    for(let j=i;j<NewUser.length-1;++j) {
+      arr[j]=arr[j+1];
+      arr[j].id=j+1;
+      arr1[j]=arr1[j+1];
+
+    }
+    arr.pop();
+    arr1.pop();
+    console.log("users in delete part ",users);
+    setIsActiveIndex(arr1);
+    ChangeUser(arr);
+
+    //   colorarr.pop();
+    //   users.pop();
+    //   console.log("inside delete coloarr ",colorarr);
+    //   console.log("insider delete users ",users);
+      // console.log("inside delete NewUsers ", NewUser);
+
+     };
+    
+   
+    
     const Important=(i) =>{
       // let newArr=[...colorarr];
       // newArr[i]="important";
@@ -50,16 +66,57 @@ function Table1(props){
       let k= t[i];
       for(let j=i;j>0;--j) t[j]=t[j-1];
       t[0]=k;
+      for(let j=0;j<=i;++j) t[j].id=j+1;
+      console.log("in the important part ",users)
       ChangeUser(t);
       // newArr[0]="important";
       // setIsActiveIndex(newArr);
 
 
     }
+    // useEffect(()=>{
+    //   let arr=[...NewUser];
+    //   let g=[...users];
+    //   let ui=[...colorarr];
+    //   let si=arr.length;
+    //   const s = new Set();
+    //   for(let i=0;i<arr.length;++i) s.add(arr[i].PhoneNumber);
+    //   console.log(s);
+    //   for(let i=0;i<g.length;++i){
+    //     if(s.has(g[i].PhoneNumber)) continue;
+    //     else{
+    //       let hj=g[i];
+    //       hj.id=si;
+    //       si=si+1;
+    //       arr.push(hj);
+    //       ui.push("beforeClick");
+    //     }
+    //   }
+    //   ChangeUser(arr);
+    //   setIsActiveIndex(ui);
+
+        
+    //   if(g.length >0 && arr.length>0){
+    //   if(arr[arr.length-1].Name!==g[g.length-1].Name){
+    //     let u=arr.length;
+    //     let hp=[...colorarr];
+    //     for(let i=0;i<g.length;++i){
+    //       let hj=g[i];
+    //       hj.id=u+i+1;
+    //       hp.push("beforeClick");
+    //       arr.push(hj);
+    //     }       
+    //     setIsActiveIndex(hp);
+    //     ChangeUser(arr);
+    //  }
+    // }
+    // });
+    console.log("what does the users become outside ",users)
+    console.log("state of the array to be rendered ",NewUser)
   return (
   (users.length==0) ? <div></div> :
     <div >   
-        <Table aria-label="simple table">
+        <Table  aria-label="simple table">
        <TableHead>
          <TableRow class="backg" >
            <TableCell>S.No</TableCell>
@@ -85,7 +142,7 @@ function Table1(props){
          ))}
        </TableBody>
      </Table>
-        </div>)
+     <p >Going to the contants/ about page will erase the contact information here!      </p>        </div>)
 }
 export default Table1
 
