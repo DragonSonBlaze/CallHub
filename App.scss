@@ -1,0 +1,370 @@
+$hueStep: 90;
+$delayStep: .115s;
+body {
+	background-image: url('https://th.bing.com/th/id/OIP.EntHyMTPmeoqehBH1VZXAQHaEL?w=270&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7	');
+  }
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+a {
+    line-height: 5em;
+    display: inline-block;
+    text-decoration: none;
+    padding: 1200;
+    margin: 422;
+}
+
+.parent {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  border: 1px solid red;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+header h1 {
+  text-align: center;
+  font-size: 70px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+#inner {  
+  border: 0.05em ;
+}
+
+#outer {
+  border: 0.05em ;
+  width:100%;
+  display: flex;
+  justify-content: center;
+}
+.topnav {
+  background-color: #007FFF;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: darken(yellow,7%);
+  color: white;
+}
+/* Change the color of links on hover */
+
+h2{
+  text-align: center;
+  font-family: "Arial", "Courier New", monospace;
+}
+.p1{
+  font-family: "Source Sans Pro", "Source Sans Pro", monospace;}
+
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #32CD32;
+  color: white;
+}
+/* .form-submit-button { */
+
+.form-submit-button {
+	background: #0c8aeb;
+	color: #fff;
+	border: 1px solid #eee;
+  border-style: outset;
+  height: 50px;
+	width: 100px;
+	border-radius: 20px;
+	text-shadow: none;
+  position:relative ;
+  top: 50%;
+  left: 50%;
+  }
+/* margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+} */
+
+.form-submit-button:hover {
+  background:  #0b0d4e;
+	color: #fff;
+	border: 1px solid #eee;
+  border-style: outset;
+  height: 50px;
+	width: 100px;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+}
+// .back{
+//   background-color: rgb(117, 234, 238);
+// }
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color:  rgb(158, 249, 197);
+}
+input:hover{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color:  rgb(240, 241, 181);
+}
+
+// <!-- HTML !-->
+// <button class="button-21" role="button">Button 21</button>
+
+/* CSS */
+ $color: rgba(84, 236, 84, 0.884);
+// to change the length change the font size and the padding rest remains constant most of the times
+.button {
+  display: inline-block;
+  padding:  0.1rem 1.7rem;
+  border-radius: 00.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color:  darken($color, 15%);
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      width: 100%;
+    }
+  }
+}
+.backg{
+  background-color:    #4cb69f;
+}
+
+.beforeClick{
+  background-color:  #51e2f5;
+  font-family: "Source Sans Pro", "Source Sans Pro", monospace;
+  
+}
+.afterClick{
+  background-color:#39a0ca;
+  font-family: "Source Sans Pro", "Source Sans Pro", monospace;
+}
+.important{
+  background-color:#D3D04F;
+  font-family: "Source Sans Pro", "Source Sans Pro", monospace;
+}
+$color: rgba(211, 42, 42, 0.884);
+// to change the length change the font size and the padding rest remains constant most of the times
+.button1 {
+  display: inline-block;
+  padding: 1.2rem 0.5rem;
+  border-radius: 7rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  border-style: hidden;
+  z-index: 0;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    border-radius: 10rem;
+    border-style: hidden;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-style: hidden;
+    background-color: darken($color, 15%);
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: white;
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
+
+.rounded-input {
+  padding:10px;
+  border-radius:10px;
+  text-align: center;
+  border:hidden;
+
+&:hover{
+  padding:10px;
+  border-radius:10px;
+  text-align: center;
+}
+}
+$color: 	#fea49f;
+
+.rounded-input1 {
+  padding:15px;
+  border-radius:10px;
+  text-align: left;
+  border:hidden;
+
+&:hover{
+  padding:15px;
+  border-radius:10px;
+  text-align: left;
+}
+}
+$color: 	#fea49f;
+
+// to change the length change the font size and the padding rest remains constant most of the times
+.button2 {
+  display: inline-block;
+  padding: 1.2rem 0.7rem;
+  border-radius: 2rem;
+  border-style: hidden;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    border-style: hidden;
+    border-radius:0.005 rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-style: hidden;
+    background-color: darken($color, 10%);
+    transition: all .3s;
+    border-radius: 0.005rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: whitesmoke;
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
+
+
+.bottom1 {
+  position: fixed;
+  bottom: 0;
+}
+
+
+/* optional reset for presentation */
+// * {
+//   font-family: Arial;
+//   text-decoration: none;
+//   font-size: 20px;
+// }
+// .container {
+//   padding-top: 50px;
+//   margin: 0 auto;
+//   width: 100%;
+//   text-align: center;
+// }
+// h1 {
+//   text-transform: uppercase;
+//   font-size: .8rem;
+//   margin-bottom: 2rem;
+//   color: #777;
+// }
+// span {
+//   display: block;
+//   margin-top: 2rem;
+//   font-size: .7rem;
+//   color: #777;
+//   a {
+//     font-size: .7rem;
+//     color: #999;
+//     text-decoration: underline;
+ 
